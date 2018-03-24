@@ -1,53 +1,53 @@
-.resume {
+body.default .resume {
     max-width: 800px;
     margin: 0 auto;
 }
 
-.resume>section {
+body.default .resume>section {
     margin: 50px 0;
 }
 
-.resume>section>h1 {
+body.default .resume>section>h1 {
     text-align: center;
     margin: 20px;
 }
 
-.resume>section>h2 {
+body.default .resume>section>h2 {
     text-align: center;
     margin: 20px;
 }
 
-.resume .profile {
+body.default .resume .profile {
     text-align: center;
 }
 
-.resume .skills>ul {
+body.default .resume .skills>ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.resume .skills>ul>li {
+body.default .resume .skills>ul>li {
     width: 48%;
     border: 1px solid #ddd;
     padding: 10px;
     margin-top: 10px;
 }
 
-.resume .projects>ol>li {
+body.default .resume .projects>ol>li {
     margin: 30px 0;
     border: 1px solid #ddd;
     padding: 10px;
 }
 
-.resume .projects header {
+body.default .resume .projects header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
-.resume .projects header .name {
+body.default .resume .projects header .name {
     margin-right: 1em;
 }
-.resume .projects header .start { display: flex; }
+body.default .resume .projects header .start { display: flex; }

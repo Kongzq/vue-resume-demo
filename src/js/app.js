@@ -1,14 +1,12 @@
 let app = new Vue({ el: '#app',
   data: {
-    editingName: false, loginVisible: false, signUpVisible: false, shareVisible: false,
-    previewUser: {
-      objectId: undefined,
-    },
-    previewResume: {},
+    editingName: false, loginVisible: false, signUpVisible: false, shareVisible: false,skinPickerVisible:false,
+
+ 
     currentUser: {
       objectId: undefined,
       email: '',
-      fuck: 'fuck'
+ 
     },
     resume: {
       name: '姓名',
@@ -35,13 +33,6 @@ let app = new Vue({ el: '#app',
     signUp: {
       email: '',
       password: ''
-    },
-    shareLink: '不知道',
-    mode: 'edit' // 'preview'
-  },
-  computed: {
-    displayResume () {
-      return this.mode === 'preview' ? this.previewResume : this.resume
     }
   },
   watch: {
@@ -70,8 +61,11 @@ let app = new Vue({ el: '#app',
         }
       }
     },
-    hasLogin () {
+    hasLogout () {
       return !!this.currentUser.objectId
+    },
+    hasLogin() {
+      return !!!this.currentUser.objectId
     },
     onLogin(e){
       AV.User.logIn(this.login.email, this.login.password).then((user) => {  
@@ -153,6 +147,12 @@ let app = new Vue({ el: '#app',
     removeProject (index) {
       this.resume.projects.splice(index, 1)
     },
+    print(){
+      window.print()
+    },
+    setTheme(name) {
+      document.body.className = name
+    }
   }
 })
 
@@ -169,40 +169,3 @@ if (currentUser) {
 }
 
 
-// 获取预览用户的 id
-let search = location.search
-let regex = /user_id=([^&]+)/
-let matches = search.match(regex)
-let userId
-if (matches) {
-  userId = matches[1]
-  app.mode = 'preview'
-  app.getResume({objectId: userId}).then(resume => {
-    app.previewResume = resume
-  })
-
-
-}
-
-
-
-
-// "打印"按钮的代码方方没给，看他的视频，他的做法就是
-// 点击后执行window.print()，这样就会调用浏览器的打印功能
-// 然后<link href='print.css' media=print>
-// 在print.css把一些元素去掉，例如
-// aside,.skills .remove
-// {display:none;} 
-
-
-// "换肤"按钮的代码方方没给，看他的视频，他的做法就是
-// 在index.html的<main :class=mainClass>，点击换肤按钮弹出一个对话框，上面有2个按钮，一个写着“暗黑“，一个写着”默认“，
-// 点击暗黑，执行setTheme('dark')，点击默认，执行setTheme('default') ，在app.js的data添加mainClass:default，methods添加setTheme（name） { this.mainClass=name}，然后在css写相应的样式
-
-
-
-// 后来方方用vue-router实现点击保存按钮跳转到/login，渲染login组件，点击登录框的注册按钮跳转到/signup，渲染signup组件，这样就不需要用变量控制登录框和注册框的显隐，
-// 但方方没给代码，大概看下“方方的路由”那个文件夹即可
-
-// 后来方方把当前的代码用组件化的形式整理了一下，但代码没给，其实也很简单，把相应组件的option复制到一个文件,然后一些地方用父子组件的通信方式传递数据
-// 具体看vue 毕设 - 简历制作工具 4，视频:模块化，07:20-22:50, <skinPicker></skinPicker>这样写其实并没有渲染组件，写成<skin-picker></skin-picker>才行

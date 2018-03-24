@@ -1,21 +1,87 @@
-* { margin: 0; padding: 0; }
-*, *::before, *::after { box-sizing: border-box; }
-a { text-decoration: none; color: inherit; }
-ul, ol { list-style: none; }
-body { font-size: 18px; }
-button { font: inherit; }
-div[v-cloak] { display: none; }
-@media (min-width: 500px) {  
-    
-    .page { height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+body {
+    font-size: 18px;
+}
+
+button {
+    font: inherit;
+}
+
+div[v-cloak] {
+    display: none;
+}
+
+@media (min-width: 500px) {
+    .page {
+        height: 100vh;
         display: flex;
     }
 }
-.page > aside { width: 100px; border-right: 1px solid #ddd; box-shadow: 0 0 1px 0 rgba(0, 0, 0, .2); display: flex; flex-direction: column; justify-content: space-between; text-align: center; flex-shrink: 0; }
-.page > aside > .upper { display: flex; flex-direction: column; }
-.page > aside .actions > li { margin: 20px; }
-.page > aside > .down { padding: 20px 0; }
-.page > main { flex-grow: 1; overflow: auto; }
-.button { padding: 3px 10px; }
-.skills > ul > li {position: relative;}
-.skills > ul > li .remove {position: absolute; top: 0; right: 0;}
+
+.page>aside {
+    width: 100px;
+    border-right: 1px solid #ddd;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.page>aside>.upper {
+    display: flex;
+    flex-direction: column;
+}
+
+.page>aside .actions>li {
+    margin: 20px;
+}
+
+.page>aside>.down {
+    padding: 20px 0;
+}
+
+.page>main {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.button {
+    padding: 3px 10px;
+}
+
+.skills>ul>li {
+    position: relative;
+}
+.skills > ul > li .remove {
+    position: absolute; 
+    top: 0; 
+    right: 0;}
+
+
+.exitPreview {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+  }

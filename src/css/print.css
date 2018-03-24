@@ -1,0 +1,14 @@
+.page >aside,
+.skills .remove,
+.siklls .add,
+.projects .remove,
+.projects .add ,
+.skinPicker ,
+.login {
+    display: none;
+}
+
+.page {
+    padding: 20px;
+}
+

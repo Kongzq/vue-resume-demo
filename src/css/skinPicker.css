@@ -1,4 +1,4 @@
-.share {
+.skinPicker {
     position: fixed;
     min-width: 300px;
     transform: translate(-50%, -50%);
@@ -7,13 +7,11 @@
     background: white;
     box-shadow: 0 0 5px black;
     padding: 30px;
+    
 }
-.share h2{
 
-}
-.share textarea {
-    word-break: break-all;
-    width: 100%;
-    height: 4em;
-    resize: none;
+.skinPicker .close {
+    position: absolute;
+    top: 0;
+    right: 0;
 }

@@ -2,12 +2,13 @@
     position: fixed;
     min-width: 300px;
     min-height: 400px;
-   transform: translate(-50%, -50%);  /* 配合下面的left,top实现.login水平垂直居中 */
+   transform: translate(-50%, -50%);  
     left: 50%;
     top: 50%;
     background: #ddd;
     display: flex;
     justify-content: center;
+    color:black;
 
 }
 .login > .form {

@@ -5,10 +5,10 @@
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
-    background: green;
+    background: #ddd;
     display: flex;
     justify-content: center;
-  
+    color:black;
 }
 .signUp > .form {
     width: 100%;
