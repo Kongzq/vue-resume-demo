@@ -139,7 +139,7 @@
   </div>
 
   
-  <div class="skinPicker" v-show="skinPickerVisible">
+  <div class="skinPicker" v-show="skinPickerVisible"  v-cloak>
     <button @click="setTheme('default')">默认</button>
     <button @click="setTheme('dark')">暗黑</button>
     <button class="close" @click="skinPickerVisible =! skinPickerVisible">关闭</button>
